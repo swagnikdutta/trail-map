@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
         }
 
         let dataPoints = _.get(result, 'gpx.trk[0].trkseg[0].trkpt', []),
-            justCoordinates  = dataPoints.map(elem => elem['$']),
+            locations  = dataPoints.map(elem => elem['$']),
             totalDistance = 0,
             maxSpeed = 0,
             avgSpeed = 0,
@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
         }
 
         res.render('index.ejs', {
-            justCoordinates,
+            locations,
             maxSpeed,
             avgSpeed: avgSpeed / dataPoints.length,
             totalDistance,
