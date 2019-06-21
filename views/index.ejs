@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Markers</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #data{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            height: 20%;
+        }
+        #map{
+            border: 1px solid grey;
+            height: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="data">
+        <div>Maximum speed: <%=maxSpeed.toFixed(2)%> Km/hr</div>
+        <div>Average speed: <%=avgSpeed.toFixed(2)%> Km/hr</div>
+        <div>Total distance: <%=totalDistance.toFixed(2)%> Km</div>
+        <div>Total moving time: <%=totalMovingTime.toFixed(2)%> hrs</div>
+        <div>Elevation gained: <%=elevationGained%> unit</div>
+    </div>
+    <div class="row" id="map"></div>
+
+    <script>
+        var maxSpeed = '<%-maxSpeed%>';
+        var avgSpeed = '<%-avgSpeed%>';
+        var totalDistance = '<%-totalDistance%>';
+        var totalMovingTime = '<%-totalMovingTime%>';
+        var elevationGained = '<%-elevationGained%>';
+
+        // var map;
+        // var justCoordinates = '<%-justCoordinates%>';        
+        
+        // function initMap() {
+        //     map = new google.maps.Map(document.getElementById('map'), {
+        //         zoom: 2,
+        //         center: new google.maps.LatLng(justCoordinates[0].lat, justCoordinates[0].lon),
+        //         mapTypeId: 'terrain'
+        //     });
+
+        //     // for (var i = 0; i < justCoordinates.length; i++) {
+        //     //     var latLng = new google.maps.LatLng(justCoordinates[i].lon, justCoordinates[i].lat);
+        //     //     var marker = new google.maps.Marker({
+        //     //         position: latLng,
+        //     //         map: map
+        //     //     });
+        //     // }
+        // }
+    </script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB77nPp-KMfZPuCldB8k7GZTFe5hFcnGiU&callback=initMap"></script> -->
+</body>
+</html>

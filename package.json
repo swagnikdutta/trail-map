@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
     "fs": "0.0.1-security",
     "lodash": "^4.17.11",
     "xml2js": "^0.4.19"
