@@ -13,10 +13,10 @@
             justify-content: space-around;
             align-items: center;
             flex-wrap: wrap;
-            height: 20%;
+            height: 10%;
         }
         #map{
-            height: 80%;
+            height: 90%;
         }
     </style>
 </head>
@@ -40,21 +40,20 @@
             locations = <%- JSON.stringify(locations) %>;
             
         function initMap() {
-            var myLatLng = {
-                lat: locations[0].lat * 1, 
-                lng: locations[0].lon * 1
-            };
-
-            map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 2,
-                center: myLatLng
+            let map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 11,
+                center: {
+                    lat: locations[0].lat * 1, 
+                    lng: locations[0].lon * 1
+                }
             });
 
             for (let i = 0; i < locations.length; i++) {
-                let latLng = new google.maps.LatLng(locations[i].lon * 1, locations[i].lat * 1);
-                let marker = new google.maps.Marker({
+                let latLng = new google.maps.LatLng(locations[i].lat * 1, locations[i].lon * 1);
+                new google.maps.Marker({
                     position: latLng,
-                    map: map
+                    map: map,
+                    title: (i+1)+""
                 });
             }
         }
@@ -62,3 +61,6 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB77nPp-KMfZPuCldB8k7GZTFe5hFcnGiU&callback=initMap"></script>
 </body>
 </html>
+
+<%# swagnik07: AIzaSyDkhfLkWIzki5Q4PBmeYOEAoKCgY4I8wgc %>
+<%# swagnikd: AIzaSyB77nPp-KMfZPuCldB8k7GZTFe5hFcnGiU %>
